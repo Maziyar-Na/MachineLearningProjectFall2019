@@ -3,9 +3,14 @@ from collections import defaultdict
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split,cross_val_score
 import statsmodels.api as sm
+from sklearn import metrics
+from sklearn.metrics import make_scorer
 
-NUM_TRAIN_EXAMPLES = 7000
+
+NUM_TRAIN_EXAMPLES = 10000
 NUM_VALIDATION_EXAMPLE = 1000
 NUM_TEST_EXAMPLES = 2000
 
@@ -100,69 +105,85 @@ median_powers = defaultdict(list)
 power_range = defaultdict(list)
 X = []
 Y=[]
-
+flag = 1
 with open("10k.anon.json") as data:
     iterations = -1
     count = 0
     for line in data:
-        if count == 4:
-            print(line)
+        #if count == 30:
+        #    print(line)
         count += 1
         iterations += 1
         if iterations < NUM_TRAIN_EXAMPLES :
             vals = []
             obj = json.loads(line)
-            if obj["job"]["torque_exit_code"] != 0:
-                continue
-            size = 0
-            num_of_not_valid = 0
-            for ts in obj["power"]:
-                try:
-                    if ts["metric"] == "power":
-                        size += 1
-                        if obj["job"]["queue"] == "phi" and ts["value"] <= 700 and ts["value"] >= 90: 
-                            vals.append(ts["value"]/1000)
-                        elif obj["job"]["queue"] != "phi" and ts["value"] <= 300 and ts["value"] >= 90:
-                            vals.append(ts["value"]/1000)
-                        else:
-                            num_of_not_valid += 1
-                except:
+            if obj["job"]["torque_exit_code"] == 0:
+                #print("[dbg] torque exit code is not 0")
+                #continue
+                if flag == 2:
+                    print(line)
+                flag += 1
+                size = 0
+                num_of_not_valid = 0
+                for ts in obj["power"]:
+                    try:
+                        if ts["metric"] == "power":
+                            size += 1
+                            if obj["job"]["queue"] == "phi" and ts["value"] <= 700 and ts["value"] >= 90: 
+                                vals.append(ts["value"])
+                            elif obj["job"]["queue"] != "phi" and ts["value"] <= 300 and ts["value"] >= 90:
+                                vals.append(ts["value"])
+                            else:
+                                num_of_not_valid += 1
+                    except:
+                        continue
+                if vals == [] or np.var(vals) == 0 or (num_of_not_valid / size) > 0.5 :
                     continue
-            if vals == [] or np.var(vals) == 0 or (num_of_not_valid / size) > 0.5 :
-                continue
-            try:
-                duration[obj["job"]["app_name"]].append(get_time_feature(obj["job"]["wallclock_used"]))
-                total_energy[obj["job"]["app_name"]].append(get_time_feature(obj["job"]["wallclock_used"])*np.mean(vals))
-                median_powers[obj["job"]["app_name"]].append(np.median(vals))
-                power_range[obj["job"]["app_name"]].append(np.ptp(vals))
-                X.append( [float(convert_queue(obj["job"]["queue"])),
-                float(convert_app_name(obj["job"]["app_name"])),
-                float(obj["job"]["processors_used"]),
-                float(get_time_feature(obj["job"]["cpu_used"])),
-                float(obj["job"]["mem_used"]),
-                float(obj["job"]["vmem_used"]),
-                float(get_time_feature(obj["job"]["wallclock_req"])),
-                float(convert_feature_request(obj["job"]["feature_req"])),
-                float(obj["job"]["nodes_req"]),
-                float(obj["job"]["processors_req"]),
-                float(convert_true_false(obj["job"]["interactive"])) ] )
-                Y.append(np.mean(vals))
-            except Exception as e:
-                print("error: " , e)
+                try:
+                    duration[obj["job"]["app_name"]].append(get_time_feature(obj["job"]["wallclock_used"]))
+                    total_energy[obj["job"]["app_name"]].append(get_time_feature(obj["job"]["wallclock_used"])*np.mean(vals))
+                    median_powers[obj["job"]["app_name"]].append(np.median(vals))
+                    power_range[obj["job"]["app_name"]].append(np.ptp(vals))
+                    X.append( [float(convert_queue(obj["job"]["queue"])),
+                    float(convert_app_name(obj["job"]["app_name"])),
+                    float(obj["job"]["processors_used"]),
+                    float(get_time_feature(obj["job"]["cpu_used"])),
+                    float(obj["job"]["mem_used"]),
+                    float(obj["job"]["vmem_used"]),
+                    float(get_time_feature(obj["job"]["wallclock_req"])),
+                    float(convert_feature_request(obj["job"]["feature_req"])),
+                    float(obj["job"]["nodes_req"]),
+                    float(obj["job"]["processors_req"]),
+                    float(convert_true_false(obj["job"]["interactive"])) ] )
+                    Y.append(np.mean(vals))
+                except Exception as e:
+                    print("error: " , e)
+                
         else:
             break
 
-'''reg = LinearRegression(normalize = True, n_jobs = -1).fit(X, Y)
-print("reg.score(X, Y): " , reg.score(X, Y))
+#X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size = 0.2) 
+reg = LinearRegression(normalize = True, n_jobs = -1)
+model = reg.fit(X, Y)
+#y_predict = reg.predict(X_test)
+scores = cross_val_score(model, X_train, y_train, scoring=make_scorer(metrics.mean_squared_error), cv = 6)
+print("cross validation score is: ", np.sqrt(scores.mean()))
+#print("root mean squared error is: ", np.sqrt(metrics.mean_squared_error(y_test, y_predict)))
+print("reg.score(X, Y): " , reg.score(X_test, y_test))
 print("reg.coef_ : ", reg.coef_)
-print("reg.intercept_ : " , reg.intercept_)'''
+print("reg.intercept_ : " , reg.intercept_)
 
-X2 = sm.add_constant(X)
+'''X2 = sm.add_constant(X)
 est = sm.OLS(Y, X2)
 est2 = est.fit()
-print(est2.summary())
+print(est2.summary())'''
 
-plt.boxplot(duration.values(), labels=duration.keys(), widths=0.3)
+'''clf = RandomForestClassifier(max_depth=2, random_state=0)
+clf.fit(X, Y)
+print("Random forest feature importance", clf.feature_importances_)
+print("Random forest score: ", clf.score(X, Y))'''
+
+'''plt.boxplot(duration.values(), labels=duration.keys(), widths=0.3)
 plt.title("Duration(hours)")
 plt.show()
 
@@ -176,5 +197,5 @@ plt.show()
 
 plt.boxplot(power_range.values(), labels=power_range.keys(), widths=0.3)
 plt.title("Power range(kW)")
-plt.show()
+plt.show()'''
 
