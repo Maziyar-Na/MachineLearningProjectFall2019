@@ -1,0 +1,744 @@
+{
+  "job": {
+    "queue": "batch",
+    "processors_used": 24,
+    "cpu_used": {
+      "minutes": 37,
+      "seconds": 41
+    },
+    "mem_used": "0",
+    "vmem_used": "0",
+    "wallclock_req": {
+      "hours": 16
+    },
+    "feature_req": "!phi",
+    "nodes_req": 1,
+    "processors_req": 24,
+    "interactive": false,
+    "app_name": "vasp"
+  },
+  "power": [
+    {
+      "timestamp": 1435710741060,
+      "host": "n1127",
+      "value": 97,
+      "metric": "power"
+    },
+    {
+      "timestamp": 1435710832243,
+      "host": "n1127",
+      "value": 106,
+      "metric": "power"
+    },
+    {
+      "timestamp": 1435710872859,
+      "host": "n1127",
+      "value": 239,
+      "metric": "power"
+    },
+    {
+      "timestamp": 1435710933361,
+      "host": "n1127",
+      "value": 224,
+      "metric": "power"
+    },
+    {
+      "timestamp": 1435710963726,
+      "host": "n1127",
+      "value": 98,
+      "metric": "power"
+    },
+    {
+      "timestamp": 1435710842298,
+      "host": "n1127",
+      "value": 174,
+      "metric": "power"
+    },
+    {
+      "timestamp": 1435710771494,
+      "host": "n1127",
+      "value": 97,
+      "metric": "power"
+    },
+    {
+      "timestamp": 1435710781543,
+      "host": "n1127",
+      "value": 98,
+      "metric": "power"
+    },
+    {
+      "timestamp": 1435710923250,
+      "host": "n1127",
+      "value": 228,
+      "metric": "power"
+    },
+    {
+      "timestamp": 1435711024361,
+      "host": "n1127",
+      "value": 98,
+      "metric": "power"
+    },
+    {
+      "timestamp": 1435711034507,
+      "host": "n1127",
+      "value": 97,
+      "metric": "power"
+    },
+    {
+      "timestamp": 1435710822080,
+      "host": "n1127",
+      "value": 99,
+      "metric": "power"
+    },
+    {
+      "timestamp": 1435710882750,
+      "host": "n1127",
+      "value": 239,
+      "metric": "power"
+    },
+    {
+      "timestamp": 1435710892920,
+      "host": "n1127",
+      "value": 237,
+      "metric": "power"
+    },
+    {
+      "timestamp": 1435710943513,
+      "host": "n1127",
+      "value": 193,
+      "metric": "power"
+    },
+    {
+      "timestamp": 1435710953548,
+      "host": "n1127",
+      "value": 103,
+      "metric": "power"
+    },
+    {
+      "timestamp": 1435710791741,
+      "host": "n1127",
+      "value": 97,
+      "metric": "power"
+    },
+    {
+      "timestamp": 1435710801832,
+      "host": "n1127",
+      "value": 97,
+      "metric": "power"
+    },
+    {
+      "timestamp": 1435710761314,
+      "host": "n1127",
+      "value": 97,
+      "metric": "power"
+    },
+    {
+      "timestamp": 1435710852523,
+      "host": "n1127",
+      "value": 235,
+      "metric": "power"
+    },
+    {
+      "timestamp": 1435710913062,
+      "host": "n1127",
+      "value": 240,
+      "metric": "power"
+    },
+    {
+      "timestamp": 1435710983944,
+      "host": "n1127",
+      "value": 98,
+      "metric": "power"
+    },
+    {
+      "timestamp": 1435710994038,
+      "host": "n1127",
+      "value": 98,
+      "metric": "power"
+    },
+    {
+      "timestamp": 1435711014257,
+      "host": "n1127",
+      "value": 97,
+      "metric": "power"
+    },
+    {
+      "timestamp": 1435710811999,
+      "host": "n1127",
+      "value": 97,
+      "metric": "power"
+    },
+    {
+      "timestamp": 1435710751274,
+      "host": "n1127",
+      "value": 97,
+      "metric": "power"
+    },
+    {
+      "timestamp": 1435710862555,
+      "host": "n1127",
+      "value": 238,
+      "metric": "power"
+    },
+    {
+      "timestamp": 1435710903061,
+      "host": "n1127",
+      "value": 225,
+      "metric": "power"
+    },
+    {
+      "timestamp": 1435710973774,
+      "host": "n1127",
+      "value": 98,
+      "metric": "power"
+    },
+    {
+      "timestamp": 1435711004108,
+      "host": "n1127",
+      "value": 98,
+      "metric": "power"
+    }
+  ],
+  "ganglia": [
+    {
+      "timestamp": 1435710981000,
+      "host": "n1127",
+      "value": 66068244,
+      "metric": "mem_total"
+    },
+    {
+      "timestamp": 1435710981000,
+      "host": "n1127",
+      "value": 49,
+      "metric": "dimm_p2_58_temp"
+    },
+    {
+      "timestamp": 1435710981000,
+      "host": "n1127",
+      "value": 40,
+      "metric": "cpu1_temp"
+    },
+    {
+      "timestamp": 1435710981000,
+      "host": "n1127",
+      "value": 0.1,
+      "metric": "cpu_system"
+    },
+    {
+      "timestamp": 1435710919000,
+      "host": "n1127",
+      "value": 48,
+      "metric": "dimm_p2_14_temp"
+    },
+    {
+      "timestamp": 1435710919000,
+      "host": "n1127",
+      "value": 1331696130,
+      "metric": "ib_bytes_out"
+    },
+    {
+      "timestamp": 1435710919000,
+      "host": "n1127",
+      "value": 3.9,
+      "metric": "cpu_system"
+    },
+    {
+      "timestamp": 1435710742000,
+      "host": "n1127",
+      "value": 66068244,
+      "metric": "mem_total"
+    },
+    {
+      "timestamp": 1435710742000,
+      "host": "n1127",
+      "value": 53,
+      "metric": "dimm_p2_58_temp"
+    },
+    {
+      "timestamp": 1435710794000,
+      "host": "n1127",
+      "value": 0,
+      "metric": "project_read_bytes"
+    },
+    {
+      "timestamp": 1435710794000,
+      "host": "n1127",
+      "value": 0,
+      "metric": "scratch_read_bytes"
+    },
+    {
+      "timestamp": 1435710742000,
+      "host": "n1127",
+      "value": 163483536,
+      "metric": "ib_bytes_in"
+    },
+    {
+      "timestamp": 1435710742000,
+      "host": "n1127",
+      "value": 40,
+      "metric": "cpu1_temp"
+    },
+    {
+      "timestamp": 1435710861000,
+      "host": "n1127",
+      "value": 47,
+      "metric": "dimm_p1_14_temp"
+    },
+    {
+      "timestamp": 1435710861000,
+      "host": "n1127",
+      "value": 46,
+      "metric": "dimm_p1_58_temp"
+    },
+    {
+      "timestamp": 1435710861000,
+      "host": "n1127",
+      "value": 130496.40999999999,
+      "metric": "bytes_out"
+    },
+    {
+      "timestamp": 1435710861000,
+      "host": "n1127",
+      "value": 0,
+      "metric": "project_write_bytes"
+    },
+    {
+      "timestamp": 1435710794000,
+      "host": "n1127",
+      "value": 47,
+      "metric": "dimm_p1_14_temp"
+    },
+    {
+      "timestamp": 1435710794000,
+      "host": "n1127",
+      "value": 46,
+      "metric": "dimm_p1_58_temp"
+    },
+    {
+      "timestamp": 1435710794000,
+      "host": "n1127",
+      "value": 40,
+      "metric": "cpu2_temp"
+    },
+    {
+      "timestamp": 1435710981000,
+      "host": "n1127",
+      "value": 47,
+      "metric": "dimm_p1_14_temp"
+    },
+    {
+      "timestamp": 1435710981000,
+      "host": "n1127",
+      "value": 46,
+      "metric": "dimm_p1_58_temp"
+    },
+    {
+      "timestamp": 1435710981000,
+      "host": "n1127",
+      "value": 0,
+      "metric": "scratch_write_bytes"
+    },
+    {
+      "timestamp": 1435710919000,
+      "host": "n1127",
+      "value": 47,
+      "metric": "dimm_p1_14_temp"
+    },
+    {
+      "timestamp": 1435710919000,
+      "host": "n1127",
+      "value": 66068244,
+      "metric": "mem_total"
+    },
+    {
+      "timestamp": 1435710919000,
+      "host": "n1127",
+      "value": 46,
+      "metric": "dimm_p1_58_temp"
+    },
+    {
+      "timestamp": 1435710919000,
+      "host": "n1127",
+      "value": 49,
+      "metric": "dimm_p2_58_temp"
+    },
+    {
+      "timestamp": 1435710919000,
+      "host": "n1127",
+      "value": 40,
+      "metric": "cpu1_temp"
+    },
+    {
+      "timestamp": 1435710919000,
+      "host": "n1127",
+      "value": 231368144,
+      "metric": "scratch_write_bytes"
+    },
+    {
+      "timestamp": 1435710742000,
+      "host": "n1127",
+      "value": 0,
+      "metric": "scratch_write_bytes"
+    },
+    {
+      "timestamp": 1435710794000,
+      "host": "n1127",
+      "value": 1288.2,
+      "metric": "bytes_out"
+    },
+    {
+      "timestamp": 1435710794000,
+      "host": "n1127",
+      "value": 64198804,
+      "metric": "mem_free"
+    },
+    {
+      "timestamp": 1435710794000,
+      "host": "n1127",
+      "value": 0,
+      "metric": "project_write_bytes"
+    },
+    {
+      "timestamp": 1435710742000,
+      "host": "n1127",
+      "value": 0,
+      "metric": "cpu_user"
+    },
+    {
+      "timestamp": 1435710861000,
+      "host": "n1127",
+      "value": 66068244,
+      "metric": "mem_total"
+    },
+    {
+      "timestamp": 1435710861000,
+      "host": "n1127",
+      "value": 1305651710,
+      "metric": "ib_bytes_out"
+    },
+    {
+      "timestamp": 1435710861000,
+      "host": "n1127",
+      "value": 49,
+      "metric": "dimm_p2_58_temp"
+    },
+    {
+      "timestamp": 1435710861000,
+      "host": "n1127",
+      "value": 40,
+      "metric": "cpu1_temp"
+    },
+    {
+      "timestamp": 1435710861000,
+      "host": "n1127",
+      "value": 62303904,
+      "metric": "mem_free"
+    },
+    {
+      "timestamp": 1435710742000,
+      "host": "n1127",
+      "value": 51,
+      "metric": "dimm_p1_14_temp"
+    },
+    {
+      "timestamp": 1435710742000,
+      "host": "n1127",
+      "value": 50,
+      "metric": "dimm_p1_58_temp"
+    },
+    {
+      "timestamp": 1435710742000,
+      "host": "n1127",
+      "value": 0,
+      "metric": "cpu_system"
+    },
+    {
+      "timestamp": 1435710861000,
+      "host": "n1127",
+      "value": 7306253,
+      "metric": "bytes_in"
+    },
+    {
+      "timestamp": 1435710861000,
+      "host": "n1127",
+      "value": 966857790,
+      "metric": "scratch_write_bytes"
+    },
+    {
+      "timestamp": 1435710794000,
+      "host": "n1127",
+      "value": 66068244,
+      "metric": "mem_total"
+    },
+    {
+      "timestamp": 1435710794000,
+      "host": "n1127",
+      "value": 49,
+      "metric": "dimm_p2_58_temp"
+    },
+    {
+      "timestamp": 1435710742000,
+      "host": "n1127",
+      "value": 52,
+      "metric": "dimm_p2_14_temp"
+    },
+    {
+      "timestamp": 1435710794000,
+      "host": "n1127",
+      "value": 163513584,
+      "metric": "ib_bytes_in"
+    },
+    {
+      "timestamp": 1435710794000,
+      "host": "n1127",
+      "value": 40,
+      "metric": "cpu1_temp"
+    },
+    {
+      "timestamp": 1435710981000,
+      "host": "n1127",
+      "value": 1394399740,
+      "metric": "ib_bytes_out"
+    },
+    {
+      "timestamp": 1435710981000,
+      "host": "n1127",
+      "value": 0.6000000000000001,
+      "metric": "cpu_user"
+    },
+    {
+      "timestamp": 1435710919000,
+      "host": "n1127",
+      "value": 62119592,
+      "metric": "mem_free"
+    },
+    {
+      "timestamp": 1435710742000,
+      "host": "n1127",
+      "value": 0,
+      "metric": "project_read_bytes"
+    },
+    {
+      "timestamp": 1435710794000,
+      "host": "n1127",
+      "value": 0,
+      "metric": "cpu_user"
+    },
+    {
+      "timestamp": 1435710981000,
+      "host": "n1127",
+      "value": 0,
+      "metric": "project_read_bytes"
+    },
+    {
+      "timestamp": 1435710981000,
+      "host": "n1127",
+      "value": 0,
+      "metric": "scratch_read_bytes"
+    },
+    {
+      "timestamp": 1435710981000,
+      "host": "n1127",
+      "value": 0,
+      "metric": "project_write_bytes"
+    },
+    {
+      "timestamp": 1435710919000,
+      "host": "n1127",
+      "value": 0,
+      "metric": "project_read_bytes"
+    },
+    {
+      "timestamp": 1435710919000,
+      "host": "n1127",
+      "value": 165772080,
+      "metric": "ib_bytes_in"
+    },
+    {
+      "timestamp": 1435710919000,
+      "host": "n1127",
+      "value": 1426183940,
+      "metric": "scratch_read_bytes"
+    },
+    {
+      "timestamp": 1435710919000,
+      "host": "n1127",
+      "value": 5255.5,
+      "metric": "bytes_out"
+    },
+    {
+      "timestamp": 1435710919000,
+      "host": "n1127",
+      "value": 40,
+      "metric": "cpu2_temp"
+    },
+    {
+      "timestamp": 1435710919000,
+      "host": "n1127",
+      "value": 0,
+      "metric": "project_write_bytes"
+    },
+    {
+      "timestamp": 1435710742000,
+      "host": "n1127",
+      "value": 1305003900,
+      "metric": "ib_bytes_out"
+    },
+    {
+      "timestamp": 1435710742000,
+      "host": "n1127",
+      "value": 0,
+      "metric": "scratch_read_bytes"
+    },
+    {
+      "timestamp": 1435710742000,
+      "host": "n1127",
+      "value": 40,
+      "metric": "cpu2_temp"
+    },
+    {
+      "timestamp": 1435710861000,
+      "host": "n1127",
+      "value": 164324240,
+      "metric": "ib_bytes_in"
+    },
+    {
+      "timestamp": 1435710861000,
+      "host": "n1127",
+      "value": 88.4,
+      "metric": "cpu_user"
+    },
+    {
+      "timestamp": 1435710861000,
+      "host": "n1127",
+      "value": 2.2,
+      "metric": "cpu_system"
+    },
+    {
+      "timestamp": 1435710794000,
+      "host": "n1127",
+      "value": 2604.7,
+      "metric": "bytes_in"
+    },
+    {
+      "timestamp": 1435710794000,
+      "host": "n1127",
+      "value": 0,
+      "metric": "scratch_write_bytes"
+    },
+    {
+      "timestamp": 1435710981000,
+      "host": "n1127",
+      "value": 48,
+      "metric": "dimm_p2_14_temp"
+    },
+    {
+      "timestamp": 1435710981000,
+      "host": "n1127",
+      "value": 1400.97,
+      "metric": "bytes_in"
+    },
+    {
+      "timestamp": 1435710981000,
+      "host": "n1127",
+      "value": 132.9,
+      "metric": "bytes_out"
+    },
+    {
+      "timestamp": 1435710981000,
+      "host": "n1127",
+      "value": 40,
+      "metric": "cpu2_temp"
+    },
+    {
+      "timestamp": 1435710742000,
+      "host": "n1127",
+      "value": 2604.7,
+      "metric": "bytes_in"
+    },
+    {
+      "timestamp": 1435710742000,
+      "host": "n1127",
+      "value": 1288.2,
+      "metric": "bytes_out"
+    },
+    {
+      "timestamp": 1435710742000,
+      "host": "n1127",
+      "value": 0,
+      "metric": "project_write_bytes"
+    },
+    {
+      "timestamp": 1435710861000,
+      "host": "n1127",
+      "value": 48,
+      "metric": "dimm_p2_14_temp"
+    },
+    {
+      "timestamp": 1435710861000,
+      "host": "n1127",
+      "value": 0,
+      "metric": "project_read_bytes"
+    },
+    {
+      "timestamp": 1435710861000,
+      "host": "n1127",
+      "value": 3061545730,
+      "metric": "scratch_read_bytes"
+    },
+    {
+      "timestamp": 1435710861000,
+      "host": "n1127",
+      "value": 40,
+      "metric": "cpu2_temp"
+    },
+    {
+      "timestamp": 1435710794000,
+      "host": "n1127",
+      "value": 48,
+      "metric": "dimm_p2_14_temp"
+    },
+    {
+      "timestamp": 1435710794000,
+      "host": "n1127",
+      "value": 1305033980,
+      "metric": "ib_bytes_out"
+    },
+    {
+      "timestamp": 1435710794000,
+      "host": "n1127",
+      "value": 0,
+      "metric": "cpu_system"
+    },
+    {
+      "timestamp": 1435710981000,
+      "host": "n1127",
+      "value": 167211248,
+      "metric": "ib_bytes_in"
+    },
+    {
+      "timestamp": 1435710742000,
+      "host": "n1127",
+      "value": 64197000,
+      "metric": "mem_free"
+    },
+    {
+      "timestamp": 1435710981000,
+      "host": "n1127",
+      "value": 64202316,
+      "metric": "mem_free"
+    },
+    {
+      "timestamp": 1435710919000,
+      "host": "n1127",
+      "value": 6627.88,
+      "metric": "bytes_in"
+    },
+    {
+      "timestamp": 1435710919000,
+      "host": "n1127",
+      "value": 93.2,
+      "metric": "cpu_user"
+    }
+  ]
+}
