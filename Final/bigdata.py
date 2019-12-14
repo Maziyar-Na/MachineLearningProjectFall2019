@@ -341,7 +341,11 @@ print(y_test.shape)
     # create model
 #    print("train: ", train, "test: ", test)'''
 NN_model = Sequential()
-NN_model.add(LSTM(200, input_shape=(8,1), recurrent_activation=None, activation=None))
+<<<<<<< HEAD
+NN_model.add(LSTM(100, input_shape=(8,1), recurrent_activation=None, activation=None))
+=======
+NN_model.add(LSTM(100, input_shape=(8,1), recurrent_activation=None, activation=None))
+>>>>>>> 1da37724e2bbc844e477f8001c81b2164f64429c
 #NN_model.add(Dense(512, activation=None))
 NN_model.add(Dense(256, activation=None))
 NN_model.add(Dense(128, activation=None))
@@ -388,7 +392,7 @@ print(y_insitu_test.shape)
     # create model
 #    print("train: ", train, "test: ", test)'''
 NN_model = Sequential()
-NN_model.add(LSTM(200, input_shape=(4,1), recurrent_activation=None, activation=None))
+NN_model.add(LSTM(100, input_shape=(4,1), recurrent_activation=None, activation=None))
 #NN_model.add(Dense(512, activation=None))
 NN_model.add(Dense(256, activation=None))
 NN_model.add(Dense(128, activation=None))
