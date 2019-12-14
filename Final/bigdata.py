@@ -139,7 +139,7 @@ with open("10k.anon.json") as data:
             obj = json.loads(line)
             if obj["job"]["torque_exit_code"] == 0:
                 #print("[dbg] torque exit code is not 0")
-                #continue
+                #continuea
                 if flag == 2:
                     print(line)
                 flag += 1
@@ -341,7 +341,7 @@ print(y_test.shape)
     # create model
 #    print("train: ", train, "test: ", test)'''
 NN_model = Sequential()
-NN_model.add(LSTM(1, input_shape=(8,1), recurrent_activation=None, activation=None))
+NN_model.add(LSTM(200, input_shape=(8,1), recurrent_activation=None, activation=None))
 #NN_model.add(Dense(512, activation=None))
 NN_model.add(Dense(256, activation=None))
 NN_model.add(Dense(128, activation=None))
@@ -357,6 +357,9 @@ history = NN_model.fit(X_train, y_train, epochs=50, verbose=1)
 NN_scores = NN_model.evaluate(X_test, y_test, verbose=1)
 print((NN_model.metrics_names[1], NN_scores[1]))
 plt.plot(history.history['rmse'])
+plt.xlabel('Number of epochs')
+plt.ylabel('RMSE (W)')
+plt.title('Sequential Modeling (A priori)')
 plt.show()
 
 
@@ -385,7 +388,7 @@ print(y_insitu_test.shape)
     # create model
 #    print("train: ", train, "test: ", test)'''
 NN_model = Sequential()
-NN_model.add(LSTM(1, input_shape=(4,1), recurrent_activation=None, activation=None))
+NN_model.add(LSTM(200, input_shape=(4,1), recurrent_activation=None, activation=None))
 #NN_model.add(Dense(512, activation=None))
 NN_model.add(Dense(256, activation=None))
 NN_model.add(Dense(128, activation=None))
@@ -406,8 +409,11 @@ plt.xlabel('Real Mean Power (W)')
 plt.ylabel('Predicted Mean Power (W)')
 plt.show()
 #print((NN_model.metrics_names[1], NN_scores[1]))
-#plt.plot(history.history['rmse'])
-#plt.show()
+plt.plot(history.history['rmse'])
+plt.xlabel('Number of Epochs')
+plt.ylabel('RMSE (W)')
+plt.title('Sequential Modeling (In situ)')
+plt.show()
 
 #print("Sequential neural net using LSTM and Dense layers mean cross validation score: ", np.mean(cvscores))
 '''clf = RandomForestClassifier(max_depth=2, random_state=0)
@@ -415,7 +421,7 @@ clf.fit(X, Y)
 print("Random forest feature importance", clf.feature_importances_)
 print("Random forest score: ", clf.score(X, Y))'''
 
-'''plt.boxplot(duration.values(), labels=duration.keys(), widths=0.3)
+plt.boxplot(duration.values(), labels=duration.keys(), widths=0.3)
 plt.title("Duration(hours)")
 plt.show()
 
@@ -429,4 +435,4 @@ plt.show()
 
 plt.boxplot(power_range.values(), labels=power_range.keys(), widths=0.3)
 plt.title("Power range(kW)")
-plt.show()'''
+plt.show()
